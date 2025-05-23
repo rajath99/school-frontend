@@ -44,6 +44,7 @@ import darkTheme from "./basic utility components/darkTheme";
 import lightTheme from "./basic utility components/lightTheme";
 import ThemeToggleButton from "./basic utility components/ThemeToggleButton";
 import { useContext, useEffect, useState } from "react";
+import AssignmentSubmissionPage from "./school/components/students/AssignmentSubmissionPage";
 
 function App() {
   const { authenticated, login,themeDark } = useContext(AuthContext);
@@ -78,6 +79,7 @@ function App() {
               <Route path="attendance" element={<AttendanceStudent />} />
               <Route path="notice" element={<NoticeStudent/>} />
             </Route>
+              <Route path="submit-assignment" element={<AssignmentSubmissionPage />} />
   
             <Route path="teacher"  element={<ProtectedRoute allowedRoles={['TEACHER']}><Teacher/></ProtectedRoute>}>
               <Route index element={<TeacherDetails />}/>
