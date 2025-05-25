@@ -45,6 +45,7 @@ import lightTheme from "./basic utility components/lightTheme";
 import ThemeToggleButton from "./basic utility components/ThemeToggleButton";
 import { useContext, useEffect, useState } from "react";
 import AssignmentSubmissionPage from "./school/components/students/AssignmentSubmissionPage";
+import AssignTeacherPage from "./school/components/teachers/AssignTeacherPage";
 
 function App() {
   const { authenticated, login,themeDark } = useContext(AuthContext);
@@ -99,6 +100,7 @@ function App() {
               <Route path="register" element={<Register />} />
               <Route path="logout" element={<Logout />} />
             </Route>
+            <Route path="assign-teacher" element={<AssignTeacherPage />} />
           </Routes>
         </BrowserRouter>
         </ThemeProvider>
