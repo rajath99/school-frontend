@@ -46,7 +46,7 @@ import ThemeToggleButton from "./basic utility components/ThemeToggleButton";
 import { useContext, useEffect, useState } from "react";
 import AssignmentSubmissionPage from "./school/components/students/AssignmentSubmissionPage";
 import AssignTeacherPage from "./school/components/teachers/AssignTeacherPage";
-
+import LoginPage from "./LoginPage";
 function App() {
   const { authenticated, login,themeDark } = useContext(AuthContext);
 
@@ -57,7 +57,7 @@ function App() {
         <BrowserRouter>
           <Routes>
             
-          <Route path="school"  element={<ProtectedRoute allowedRoles={['SCHOOL']}><School/></ProtectedRoute>}>
+          <Route path="school"  element={<School/>}>
               <Route index element={<SchoolDashboard />} />
               <Route path="class" element={<Class />} />
               <Route path="class-details" element={<ClassDetails />} />
@@ -72,7 +72,7 @@ function App() {
               <Route path="notice" element={<NoticeSchool/>} />
             </Route>
   
-            <Route path="student"  element={<ProtectedRoute allowedRoles={['STUDENT']}><Student/></ProtectedRoute>}>
+            <Route path="student"  element={<Student/>}>
               <Route index element={<StudentDetails />}/>
               <Route path="student-details" element={<StudentDetails />} />
               <Route path="examinations" element={<StudentExaminations />} />
@@ -82,7 +82,7 @@ function App() {
             </Route>
               <Route path="submit-assignment" element={<AssignmentSubmissionPage />} />
   
-            <Route path="teacher"  element={<ProtectedRoute allowedRoles={['TEACHER']}><Teacher/></ProtectedRoute>}>
+            <Route path="teacher"  element={<Teacher/>}>
               <Route index element={<TeacherDetails />}/>
               <Route path="details" element={<TeacherDetails />} />
               <Route path="examinations" element={<TeacherExaminations />} />
@@ -99,6 +99,8 @@ function App() {
               <Route path="login" element={<Login />} />
               <Route path="register" element={<Register />} />
               <Route path="logout" element={<Logout />} />
+              <Route path="loginPage" element={<LoginPage />} />
+
             </Route>
             <Route path="assign-teacher" element={<AssignTeacherPage />} />
           </Routes>
