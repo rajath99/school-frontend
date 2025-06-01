@@ -46,7 +46,6 @@ import ThemeToggleButton from "./basic utility components/ThemeToggleButton";
 import { useContext, useEffect, useState } from "react";
 import AssignmentSubmissionPage from "./school/components/students/AssignmentSubmissionPage";
 import AssignTeacherPage from "./school/components/teachers/AssignTeacherPage";
-import LoginPage from "./LoginPage";
 function App() {
   const { authenticated, login,themeDark } = useContext(AuthContext);
 
@@ -79,8 +78,8 @@ function App() {
               <Route path='periods' element={<ScheduleStudent/>} />
               <Route path="attendance" element={<AttendanceStudent />} />
               <Route path="notice" element={<NoticeStudent/>} />
-            </Route>
               <Route path="submit-assignment" element={<AssignmentSubmissionPage />} />
+            </Route>
   
             <Route path="teacher"  element={<Teacher/>}>
               <Route index element={<TeacherDetails />}/>
@@ -90,8 +89,9 @@ function App() {
               {/* <Route path='sub-teach' element={<StudentSubjectTeacher/>} /> */}
               <Route path="attendance" element={<AttendanceTeacher />} />
               <Route path="notice" element={<NoticeTeacher/>} />
+              <Route path="assign-teacher" element={<AssignTeacherPage />} />
             </Route>
-  
+   
             <Route path="/" element={<Client />}>
               <Route index element={<Home />} />
               <Route path="home" element={<Home />} />
@@ -99,10 +99,7 @@ function App() {
               <Route path="login" element={<Login />} />
               <Route path="register" element={<Register />} />
               <Route path="logout" element={<Logout />} />
-              <Route path="loginPage" element={<LoginPage />} />
-
             </Route>
-            <Route path="assign-teacher" element={<AssignTeacherPage />} />
           </Routes>
         </BrowserRouter>
         </ThemeProvider>

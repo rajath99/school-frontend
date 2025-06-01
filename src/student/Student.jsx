@@ -30,6 +30,7 @@ import CircleNotificationsIcon from "@mui/icons-material/CircleNotifications";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import ExplicitIcon from "@mui/icons-material/Explicit";
 import LogoutIcon from "@mui/icons-material/Logout";
+import AssignmentTurnedInIcon from "@mui/icons-material/AssignmentTurnedIn";
 const drawerWidth = 240;
 
 const openedMixin = (theme) => ({
@@ -134,7 +135,12 @@ export default function Student() {
       component: "Notice",
       icon: CircleNotificationsIcon,
     },
-    { link: "/logout", component: "Log Out", icon: LogoutIcon },
+  {
+  link: "/student/submit-assignment",
+  component: "Submit Assignment",
+  icon: AssignmentTurnedInIcon,
+},
+{ link: "/logout", component: "Log Out", icon: LogoutIcon },
   ];
 
   const navigate = useNavigate();
